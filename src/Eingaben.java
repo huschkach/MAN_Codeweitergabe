@@ -6,6 +6,58 @@ public class Eingaben {
         eingaben();
     }
 
+    public static double double_einlesen(String text){
+
+        double zahl = 0.0;
+
+        while(true){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Bitte geben Sie " + text + " ein: ");
+            try{
+                zahl = scanner.nextDouble();
+                break;
+            } catch (Exception e){
+                System.out.println("Es ist ein Fehler aufgetreten");
+            } finally {
+                scanner.close();
+            }
+        }
+
+        return zahl;
+    }
+
+    public static double enter_text_convert_double(String text){
+        System.out.println("Bitte geben Sie " + text + " ein: ");
+        String zahl;
+        double double_zahl = 0.0;
+        boolean correct = false;
+
+
+        while(!correct){
+            Scanner scanner = new Scanner(System.in);
+            zahl = scanner.next();
+
+            try{
+                // Umwandeln eines Strings in ein double
+                double_zahl = Double.parseDouble(zahl);
+                if (Double.isInfinite(double_zahl)){
+                    throw new Exception("Infinite is too big");
+                }
+                correct = true;
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return double_zahl;
+    }
+
+
+    public static String string_einlesen(String text){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bitte geben Sie das " + text + " ein: ");
+        return scanner.nextLine();
+    }
+
     public static void eingaben(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bitte gib deinen Namen ein: ");
