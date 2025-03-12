@@ -1,0 +1,91 @@
+- Bücher (Roman, Sach-/Fachbücher)
+- Programm ausführen
+- Sammelliste bestehend aus mehreren Büchern (Arrayliste)
+- Eingabemöglichkeit Bücher
+- Bücher haben Titel, Autoren, Seitenzahl, etc.
+- Hinzufügen Buch zu Sammelliste
+
+
+// Klassen gibt es eigentlich nicht in Pseudocode
+KLASSE Buch:
+    ATTRIBUT Seitenzahl als GANZZAHL
+    ATTRIBUT Erscheinungsjahr als GANZZAHL
+    ATTRIBUT Autor als ZEICHENKETTE (STRING)
+    ATTRIBUT Titel als TEXT
+
+    METHODE NEUES_BUCH (GANZZAHL Seitenzahl, 
+                        GANZZAHL Erscheinungsjahr,
+                        ZEICHENKETTE Autor, 
+                        Text Titel):
+        Zuweisung Seitenzahl zu ATTRIBUT namens Seitenzahl
+        Zuweisung Erscheinungsjahr zu ATTRIBUT namens Erscheinungsjahr
+        Zuweisung Autor zu ATTRIBUT namens Autor
+        Zuweisung Titel zu ATTRIBUT namens Titel
+    ENDE METHODE
+
+ENDE KLASSE
+
+ANFANG Bibliotheks-PROGRAMM:
+    Erzeugen SAMMELLISTE Bücher als Arrayliste
+
+    Erzeuge Buch1 mit den Werten Seitenzahl := 650 und
+        Erschienungsjahr := 1948 und 
+        Autor := "George Orwell" und Titel := "1984"
+
+    Hinzufügen von Buch1 zu SAMMELLISTE Bücher
+
+    Aufruf von Menü-Funktion
+ENDE PROGRAMM
+
+ANFANG Menü-Funktion:
+    SOLANGE (WAHR):
+        AUSGABE "1. AUSGABE SAMMELLISTE BÜCHER"
+        AUSGABE "2. HINZUFÜGEN NEUES BUCH"
+        AUSGABE "3. BEENDEN"
+        AUSGABE "Auswahl: "
+        EINLESEN auswahl
+
+        WENN auswahl = 1 
+            DANN AUFRUF FUNKTION Ausgabe_aller_Bücher
+        WENN auswahl = 2
+            DANN AUFRUF FUNKTION EINLESEN_BUCH
+        WENN auswahl = 3
+            DANN AUSGABE "Programm beendet"
+            BEENDEN der SChleife
+        SONST
+            AUSGABE "Ungültige Option"
+        ENDE WENN
+    ENDE SOLANGE
+ENDE Menü-Funktion
+
+
+FUNKTION EINLESEN_BUCH
+    AUSGABE "Seitenzahl: "
+    EINLESEN seitenzahl
+
+    AUSGABE "Erscheinungsjahr: "
+    EINLESEN erscheinungsjahr
+
+    AUSGABE "Autor: "
+    Einlesen autor
+
+    AUSGABE "Titel: "
+    Einlesen titel
+
+    buch := AUFRUF Methode NEUES_BUCH(seitenzahl, 
+                                      erscheinungsjahr, 
+                                      autor,
+                                      titel)
+    HINZUFÜGEN buch zu SAMMELLISTE
+ENDE FUNKTION
+
+
+FUNKTION Ausgabe_aller_Bücher
+    FÜR Jedes Buch in SAMMELLISTE BÜCHER
+        AUSGABE "Titel des Buchs"
+        AUSGABE "Autor des Buchs"
+        AUSGABE "Seitenzahl des Buchs"
+        AUSGABE "Erscheinungsjahr des Buchs"
+    ENDE FÜR
+ENDE FUNKTION
+

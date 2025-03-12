@@ -1,0 +1,68 @@
+FUNKTION DUSCHEN
+    FÜR JEDES Kleidungsstück an Person
+        AUFRUF FUNKTION Kleidungsstück ausziehen
+    ENDE FÜR
+
+    WENN Schmuck vorhanden
+        DANN 
+            FÜR JEDEN Schmuck an Person
+                WENN SCHMUCK ausziehbar
+                    DANN Schmuck ausziehen
+                ENDE WENN
+            ENDE FÜR
+    ENDE WENN
+
+    WENN Lange Haare
+        DANN Kämmen
+    WENN Glatze
+        DANN Glatze rasieren
+    ENDE WENN
+
+    AUFRUF Funktion Wasser_aufdrehen
+
+    AUFRUF FUNKTION Temperatur_Einstellen
+
+    FÜR JEDEN Quadratzentimeter des Körpers
+        Befeuchten
+    ENDE FÜR
+
+    WENN NICHT einseifen_unter_laufendem_Wasser
+        DANN AUFRUF FUNKTION Wasser_abdrehen
+    ENDE WENN
+
+    FÜR JEDEN Quadratzentimeter des Körpers
+        einseifen
+    ENDE FÜR
+
+    WENN Wasser_aus
+        DANN AUFRUF FUNKTION WAsser_aufdrehen
+    ENDE WENN
+
+    FÜR JEDEN Quadratzentimeter des Körpers
+        Seife Abwaschen
+    ENDE FÜR
+
+    AUFRUF FUNKTION Wasser_adrehen
+
+    AUFRUF FUNKTION Handtuch_holen
+
+    FÜR JEDEN Quadratzentimeter des Körpers
+        abtrocknen
+    ENDE FÜR
+
+    WENN Glatze frisch rasiert
+        DANN After Shave auftragen
+    ENDE WENN
+
+ENDE FUNKTION
+
+
+
+Funktion Temperatur_Einstellen
+    WENN zu Warm
+        DANN Wasser kälter einstellen
+    WENN zu kalt
+        DANN Wasser wärmer einstellen
+    ENDE WENN
+ENDE FUNKTION
+
