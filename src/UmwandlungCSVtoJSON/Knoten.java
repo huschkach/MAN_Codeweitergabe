@@ -1,6 +1,6 @@
 package UmwandlungCSVtoJSON;
 
-public class Knoten {
+public class Knoten{
     private String id;
     private double graphX;
     private double graphY;
@@ -33,5 +33,21 @@ public class Knoten {
                 + "\t\"dependentNodeIds\": " + "[]\n" +
                 "}";
 
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public double getGraphX() {
+        return graphX;
+    }
+
+    public double getGraphY() {
+        return graphY;
+    }
+
+    public double getGraphZ() {
+        return graphZ;
     }
 }
