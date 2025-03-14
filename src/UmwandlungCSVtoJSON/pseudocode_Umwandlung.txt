@@ -1,0 +1,52 @@
+- Datei einlesen
+- Koordinaten extrahieren
+- Segemente filtern
+- Reihenfolge 
+- Umwandlung in JSON
+- Speichern
+- Anzeige -> evtl GUI
+
+
+
+FUNKTION getFileContent(String filename)
+    Erstellen von Datei-Objekt mit Dateinamen
+    Erstellen von StringBuilder-Objekt
+
+    Öffnen der Datei als InputStream
+
+    SOLANGE InputStream hat nächste Zeile
+        Füge Zeile aus Datei zu Stringbuilder hinzu
+    ENDE SOLANGE
+
+    Datei schließen
+
+    RÜCKGABE StringBuilder-Objekt als Text
+ENDE FUNKTION
+
+FUNKTION removeFirstString(String content)
+    Aufteilen von content in das Array von Strings namens stringArray an dem Zeichen von Newline ("\n")
+
+    Erstellen eines neuen Arrays von Strings namens contentArray, das um 1 kleiner ist als das stringArray
+
+    FÜR JEDES ELEMENT mit einem Index größer gleich 1 in stringArray mit Schrittweite 1
+        Weise ELEMENT contentArray mit einem Index von Index -1 zu
+    ENDE FÜR
+
+    RÜCKGABE contentArray
+ENDE FUNKTION
+
+FUNKTION filterNodes(String[] pointArray)
+    Wandle pointArray in Liste namens pointList um
+
+    Erstelle ArrayListe von Knoten namens nodeList
+
+    FÜR I := 0 bis Länge von pointList mit Schrittweite 1
+        WEISE String current den Eintrag von pointList am Index i zu
+
+        Teile current am Wert ";" auf in ein Array von String namens point
+
+        WENN point am Index 0 gleich "0" ist
+            DANN    Erzeuge Objekt namens knoten mit den Werten point Index 0, Rückgabewert von normalizeSynaos(point Index 2), Rückgabewert von normalizeSynaos(point Index 3) 
+                    Füge knoten der nodeList hinzu
+        ENDE WENN
+    ENDE FÜR
